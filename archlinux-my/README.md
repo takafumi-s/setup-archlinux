@@ -67,3 +67,11 @@
 ```
 $ stack setup
 ```
+
+### lua
+
+* required vim autocomplete.
+
+```
+# pacman -S lua
+```
