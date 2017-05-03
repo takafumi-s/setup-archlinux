@@ -67,6 +67,10 @@
 ```
 $ stack setup
 ```
+```
+$ stack install ghc-mod
+$ stack install hlint
+$ stack install stylish-haskell
 
 ### lua
 
