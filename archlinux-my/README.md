@@ -4,6 +4,17 @@
 
 * use archlinux-desktop-xfce4.box
 
+## AUR repo
+
+```
+# cat <<'EOS' >> /etc/pacman.conf
+
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+EOS
+```
+
 ## zsh
 
 ```
