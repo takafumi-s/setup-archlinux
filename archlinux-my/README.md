@@ -83,6 +83,7 @@ $ stack setup
 $ stack install ghc-mod
 $ stack install hlint
 $ stack install stylish-haskell
+$ stack install hoogle
 
 ### lua
 
