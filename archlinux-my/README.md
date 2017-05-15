@@ -15,6 +15,13 @@ Server = http://repo.archlinux.fr/$arch
 EOS
 ```
 
+## Util
+
+```
+# pacman -S wget
+# pacman -S the_silver_searcher # ag command
+# pacman -S ctags
+
 ## zsh
 
 ```
@@ -41,12 +48,6 @@ EOS
 
 ```
 # pacman -S tmux
-```
-
-## Util
-
-```
-# pacman -S wget
 ```
 
 ## Program Language
