@@ -55,7 +55,7 @@ EOS
 ### java
 
 ```
-# pacman -S jre8-openjdk-headless
+# pacman -S jdk8-openjdk
 ```
 
 ### scala
@@ -91,4 +91,11 @@ $ stack install hoogle
 
 ```
 # pacman -S lua
+```
+
+### docker
+
+```
+$ sudo pacman -S docker
+$ sudo pacman -S docker-compose
 ```
