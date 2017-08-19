@@ -20,6 +20,12 @@
   # pacman -S yaourt
   ```
 
+## Setup Network driver (when broadcom)
+
+  ```
+  # yaourt -S broadcom-wl-dkms
+  ```
+
 ## Install netctl and wifi-menu
 
   - Notice: that it conflicts with dhcpcd.
