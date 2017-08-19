@@ -152,5 +152,32 @@
   # initrd  /initramfs-linux.img
   # options root=PARTUUID=PARTUUID rw noefi
   ```
+
+## Install another kernel
+
+  - 他のコンパイル済みカーネルをインストール（しない場合はデフォルトのlinux kernelになる）
+    - https://wiki.archlinuxjp.org/index.php/カーネル
+
+  - Install kernel-zen
+  ```
+  pacman -S linux-zen linux-zen-headers
+  ```
+  - Add Boot Loader
+  ```
+  vi /boot/loader/entries/arch-zen.conf
+  # title   Arch Linux Zen
+  # linux   /vmlinuz-linux-zen
+  # initrd  /intel-ucode.img
+  # initrd  /initramfs-linux-zen.img
+  # options root=PARTUUID=PARTUUID rw noefi
+  ```
+  - Setting default
+  ```
+  vi /boot/loader/loader.conf
+  # default  arch-zen
+  # timeout  3
+  # editor  0
+  ```
   
-  - 再起動すると、インストールしたarchが起動する
+
+- rebootすると、インストールしたarchが起動する
