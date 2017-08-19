@@ -24,8 +24,8 @@
 
 ## Setup Network driver
 
-  - broadcom : https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
-  ```
+  - broadcom:https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
+  ```
   # yaourt -S broadcom-wl-dkms
   ```
 
