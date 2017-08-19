@@ -112,10 +112,14 @@
   ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
   hwclock --systohc --utc
   ```
+
+  - Enable netctl and wifi-menu  
+    dhcpcdとnetctlは競合するので、どちらかのみ。
   
-  - Enable dhcp
   ```
-  systemctl enable dhcpcd
+  pacman -S dialog
+  systemctl enable netctl
+  wifi-menu
   ```
   
   - Set root password
