@@ -21,6 +21,7 @@ EOS
 # pacman -S wget
 # pacman -S the_silver_searcher # ag command
 # pacman -S ctags
+```
 
 ## zsh
 
@@ -84,7 +85,7 @@ $ stack install ghc-mod
 $ stack install hlint
 $ stack install stylish-haskell
 $ stack install hoogle
-
+```
 ### lua
 
 * required vim autocomplete.
