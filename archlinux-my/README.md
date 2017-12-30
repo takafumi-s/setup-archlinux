@@ -21,6 +21,7 @@ EOS
 # pacman -S wget
 # pacman -S the_silver_searcher # ag command
 # pacman -S ctags
+# pacman -S openssh
 ```
 
 ## zsh
