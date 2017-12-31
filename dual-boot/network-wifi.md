@@ -31,18 +31,21 @@
 
 ## Install netctl and wifi-menu
 
-  - Notice: that it conflicts with dhcpcd.
-  
   - netctl: https://wiki.archlinuxjp.org/index.php/Netctl
   - dhcpd: https://wiki.archlinuxjp.org/index.php/Dhcpcd
   
   - Install
   ```
   # pacman -S dialog
+  # pacman -S netctl
+  # pacman -S wifi-menu
+  
+  # ?Is not "dhcp" itself, something in it necessary? 
+  # pacman -S dhcpcd
   ```
   - Enable netctl
   ```
-  # systemctl enable netctl
+  # pacman -S netctl
   ```
   - Setup WiFi
   ```
