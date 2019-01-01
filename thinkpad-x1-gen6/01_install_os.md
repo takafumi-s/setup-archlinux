@@ -3,19 +3,19 @@
 
 ## Dual Boot準備
 
-### Windowsのバックアップを取る
+### Windowsのバックアップ
 
-- ファクトリリカバリを作っておく
+1. ファクトリリカバリを作っておく
 
 ### パーティションを作成
 
-- 空き領域のあるパーティションを縮小して、未設定領域を作る
-- `/`, `home`, `boot`用のパーティションを作成
-- フォーマットはlinux側で実施するの
+1. 空き領域のあるパーティションを縮小して、未設定領域を作る
+1. `/`, `home`, `boot`用のパーティションを作成
+1. フォーマットはlinux側で実施するの
 
 ### インストールメディアを作成
 
-- https://wiki.archlinuxjp.org/index.php/USB_インストールメディア##Rufus_.E3.82.92.E4.BD.BF.E3.81.86 を参考に
+1. https://wiki.archlinuxjp.org/index.php/USB_インストールメディア##Rufus_.E3.82.92.E4.BD.BF.E3.81.86 を参考に
    1. Rufusをダウンロード
    1. https://www.archlinux.org/download/ からarchisoをダウンロード
    1. Rufusを使ってブートUSBを作成する
@@ -35,7 +35,7 @@
 
 ### Check network
 
-- 
+1. Check
    ```sh
    ping -c 3 1.1.1.1
    ```
@@ -44,7 +44,7 @@
 
 ### Create Partition
 
-- 
+1.
    ```sh
    gdisk /dev/nvme0n1
 
@@ -106,7 +106,7 @@
 
 ### Format Partition
 
-- 
+1.
    ```sh
    # BOOT FAT32で作成
    mkfs.vfat -F32 /dev/nvme0n1p5
@@ -121,9 +121,9 @@
    mkfs.ext4 /dev/nvme0n1p8
    ```
 
-### Mount Disk
+### Mount Partition
 
-- 
+1.
    ```sh
    # ROOT
    mount /dev/nvme0n1p7 /mnt/
@@ -140,13 +140,13 @@
 
 ### Swap On
 
-- 
+1. 
    ```sh
    swapon /dev/nvme0n1p6 
    ```
 
 
-### Install System
+### Install Kernel
 
 - 
    ```sh
@@ -157,7 +157,7 @@
 
 ### Create fstab
 
-- 
+1. 
    ```sh
    genfstab -U /mnt >> /mnt/etc/fstab
    ```
@@ -166,14 +166,14 @@
 
 ### arch-chroot
 
-- 
+1. 
    ```sh
    arch-chroot /mnt /bin/bash
    ```
 
 ### Locale setting
 
-- 
+1. 
    ```sh
    vi /etc/locale.gen # Uncomment en_US.UTF-8, ja_JP.UTF-8
    locale-gen
@@ -183,7 +183,7 @@
 
 ### Set timezone to Tokyo
 
-- 
+1. 
    ```
    ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
    hwclock --systohc --utc
@@ -191,7 +191,7 @@
 
 ### Set root password
 
-- 
+1. 
    ```
    passwd
    ```
@@ -199,8 +199,9 @@
 ### Boot Loader
 
 - systemd-bootを使う
-- https://wiki.archlinuxjp.org/index.php/Systemd-boot
-- Setting Boot Loader - systemd-boot 
+   - https://wiki.archlinuxjp.org/index.php/Systemd-boot
+
+1. Setting Boot Loader - systemd-boot 
    ```
    bootctl --path=/boot install
  
@@ -227,19 +228,19 @@
  
 ## zen kernel
 
-  - 他のコンパイル済みカーネルをインストール（しない場合はデフォルトのlinux kernelになる）
-    - https://wiki.archlinuxjp.org/index.php/カーネル
+1. 他のコンパイル済みカーネルをインストール（しない場合はデフォルトのlinux kernelになる）
+   - https://wiki.archlinuxjp.org/index.php/カーネル
 
 ### Install kernel-zen
 
--
+1.
    ```
    pacman -S linux-zen linux-zen-headers
    ```
 
 ### Add Boot Loader
 
--
+1.
    ```
    vi /boot/loader/entries/arch-zen.conf
    # title   Arch Linux Zen
@@ -251,7 +252,7 @@
 
 ### Setting default
 
--
+1.
   ```
   vi /boot/loader/loader.conf
   # default  arch-zen
