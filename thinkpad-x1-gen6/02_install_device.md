@@ -88,7 +88,7 @@
       ```
    2. 立ち上がっていなかったら
       ```
-      sudo ip l set wlp2s0 up
+      sudo ip link set wlp2s0 up
       ```
 1. 接続の管理はNetworkManagerを使う
    ```
@@ -97,6 +97,10 @@
    - dhcpcdとは共存できないそうなので、`systemctl status dhcpcd`でserviceが起動していない事を確認しておく
 
 ## Sound
+
+- https://wiki.archlinux.jp/index.php/PulseAudio
+- https://wiki.archlinux.jp/index.php/Advanced_Linux_Sound_Architecture
+- http://mickey-happygolucky.hatenablog.com/entry/2015/04/04/105512
 
 1. install
    ```
@@ -114,3 +118,27 @@
    sudo pacman -S pulseaudio pavucontrol
    yay -S pulseaudio-ctl pasystray-git
    ```
+
+### Bluetooth
+
+- https://wiki.archlinux.jp/index.php/Bluetooth
+
+1. ドライバをロード
+   ```
+   sudo modprobe btusb
+   ```
+1. install package
+   ```
+   sudo pacman -S bluez bluez-utils pulseaudio-bluetooth
+   ```
+1. creating service with systemd
+   ```
+   sudo systemctl start bluetooth
+   # 必要なら自動起動
+   sudo systemctl enable bluetooth
+   ```
+1. install GUI
+   ```
+   sudo pacman -S blueberry
+   ```
+1. `Settings`->`Bluetooth`から設定
